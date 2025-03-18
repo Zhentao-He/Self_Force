@@ -1,12 +1,31 @@
-
+# Kerr circular orbit
 # Tetrad
 
-$ e_T^{\mu} = u^{\mu}=u^t(1,0,0,\Omega), \Omega = \mathrm{d}\varphi/\mathrm{d}t$
+$$ 
+e_T^{\mu} = u^{\mu}=u^t(1,0,0,\Omega), \Omega = \mathrm{d}\varphi/\mathrm{d}t
+$$
+
+$$
+e_X^\mu = (0,\frac{\sqrt{\Delta(r_0)}}{r_0},0,0)
+$$
+
+$$
+e_Y^\mu= (0,0,\frac{1}{r_0},0)
+$$
+
+$$
+e_Z^\mu=-\frac{1}{r_0F(r_0)\sqrt{\Delta(r_0)}} (\sqrt{Mr_0}(r_0^2 + a^2 - 2a \sqrt{Mr_0}  ),0,0,a \sqrt{M r_0}-2 M r_0+r_0^2)
+$$
+
+where
 $$
 u^t = \frac{\mathrm{d}t}{\mathrm{d}\tau} = \frac{a \sqrt{M r_0}+r_0{}^2}{r_0 \sqrt{2 a \sqrt{M r_0}-3 M r_0+r_0{}^2}}
 \overset{a=0}{=}\frac{1}{\sqrt{1-3M/r_0}}
 $$
 
+$$
+g(e_A,e_B)|_{x_p}=\eta_{AB} 
+$$
 $$
 \begin{equation}
     \begin{cases}
