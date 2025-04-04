@@ -1,5 +1,52 @@
+# Schwartzschild circular orbit
+
+$$
+S_{\Phi}(t,r,\theta,\varphi) = -4\pi\rho= -4\pi\int 
+\frac{\mathrm{d}\tau}{\mathrm{d}t_p} \mathrm{d}t_p
+\frac{1}{\sqrt{-g}}
+\delta(t-t_p)
+\delta[\vec{x}-\vec{x}_p(t_p)]
+$$
+
+$$
+=\frac{-4\pi q}{E_pr_p^2}\delta(r-r_p)\delta({\theta-\frac{\pi}{2}})
+\delta(\varphi - \Omega t)
+$$
+
+$$
+=\int \sum_{l=0}^{\infty}\sum_{m=-l}^{l} S_{lm\omega}(r)Y_{lm}e^{-i\omega t}\mathrm{d}\omega
+$$
+
+$$
+S_{lm\omega}(r) = \frac{-4\pi q}{E_pr_p^2}\delta(r-r_p) Y_{lm}(\frac{\pi}{2},0)\delta(\omega - m\Omega)
+$$
+
+
+$$
+S_{\Phi} = \sum_{l=0}^{\infty}\sum_{m=-l}^{l} S_{lm}(r)c_{lm}P_l^me^{im(\varphi-\Omega t) }
+$$
+
+$$
+\Phi= \sum_{l=0}^{\infty}\sum_{m=-l}^{l} \Phi_{lm}(r)c_{lm}P_l^me^{im(\varphi-\Omega t) }
+$$
+
+$$
+\Delta_{lm}\Phi_{lm}(r)=S_{lm}(r)
+$$
+
+$$
+\Delta_{lm} = \partial_r^2 + (\frac{2}{r}+ \frac{f^\prime}{f})\partial_r + \frac{1}{f}(\frac{\omega_m^2}{f} - \frac{l(l+1)}{r^2})
+$$
+
+## minimal gauge
+$$
+t = \lambda[T-H(\sigma)], r= \frac{2M}{\sigma}, H(\sigma)= \frac{1}{2}
+[-\frac{1}{\sigma}+\ln(1-\sigma)+\ln(\sigma)]
+$$
+
+This gauge retains the minimal structure in the coordinate transformation needed to construct hyperboloidal slices. Consequently, the corresponding equations on black-hole perturbation theory assume the most simple form. [1809.02837, 1910.13452]
 # Kerr circular orbit
-# Tetrad
+## Tetrad
 
 $$ 
 e_T^{\mu} = u^{\mu}=u^t(1,0,0,\Omega), \Omega = \mathrm{d}\varphi/\mathrm{d}t
@@ -82,3 +129,42 @@ $$
     \overset{T=0}{=}e^\theta_{Y}
 \end{align}
 $$
+
+
+## Analytic mesh-refinement
+
+$$
+\begin{equation}
+    x(y) = x_{\text{B}} 
+    \left(
+        1-\frac{2\sinh[\kappa(1-x_{\text{B}}y )]}{\sinh(2\kappa)}
+    \right)
+\end{equation}
+$$
+
+$y\in[-1,1] \rightarrow x\in[-1,1]$
+
+The limit $\kappa\rightarrow$ recovers the identity $x=y$.
+When $\kappa$ is large, $\mathrm{d}x/\mathrm{d}y$ is small near the $x_\text{b}$, which can resolve steep gradients in the region.
+
+$$
+\frac{\mathrm{d}f}{\mathrm{d}y} = \frac{ \mathrm{d} x}{\mathrm{d}y} \frac{\mathrm{d}f}{\mathrm{d}x}
+$$
+
+
+$$
+\frac{\mathrm{d}^2f}{\mathrm{d}x^2} = -\frac{1}{x_y^3}x_{yy}\frac{\mathrm{d}f}{\mathrm{d}y} + \frac{1}{x_y^2} \frac{\mathrm{d}^2f}{\mathrm{d}y^2}
+$$
+
+$$
+x_y:=\frac{ \mathrm{d} x}{\mathrm{d}y}=  \kappa x_{\text{B}}^2\frac{2\cosh[\kappa(1-x_{\text{B}}y )]}{\sinh(2\kappa)}
+$$
+
+$$
+x_{yy}=-2 k^2 x_{\text{B}}^3 \text{csch}(2 \kappa) \sinh [\kappa (1-x_{\text{B}} y)]
+$$
+``` matlab
+xy = kappa * xB^2 * 2 * sinh(kappa*(1-xB*y)) / sinh(2*kappa); % col vec
+Dx = Dy./xy
+Dxx = - Dy .* xyy ./ xy.^3 + Dy.^2 ./ xy.^2;
+```
