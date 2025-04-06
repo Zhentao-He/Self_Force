@@ -1,3 +1,25 @@
+# Refs
+
+- [2202.01794] Panosso Macedo, Rodrigo / Leather, Benjamin / Warburton, Niels / Wardell, Barry / Zenginoğlu, Anıl
+  *Hyperboloidal method for frequency-domain self-force calculations*
+
+  > The traditional semi-analytic Mano-Suzuki-Takasugi (MST) method has some limits:
+  >
+  > 1. The challenge with this approach is finding the coefficients in these series expansions.
+  > 2. not efficient for modes high frequencies
+  > 3. ill-suited to working with sources with unbounded support
+  >
+- [2404.10082] Bourg, Patrick / Pound, Adam / Upton, Samuel D. / Macedo, Rodrigo Panosso
+  *Simple, efficient method of calculating the Detweiler-Whiting singular field to very high order*
+
+  > The extension to eccentric or inclined orbits will be more challenging, and the only technical requirement lies in constructing a suitable local coordinate system.
+  >
+- [2404.10083] Macedo, Rodrigo Panosso / Bourg, Patrick / Pound, Adam / Upton, Samuel D.
+  *Multi-domain spectral method for self-force calculations*
+
+  > $m$-decomposition has better numerical convergence than $lm$-decomposition in [2202.01794]
+  >
+
 # Schwartzschild circular orbit
 
 $$
@@ -67,21 +89,20 @@ $$
 \left.
 \partial_\sigma\tilde\phi
 \right|^{\sigma_p+\epsilon}_{\sigma_p-\epsilon}
-=
-\left.
+=\left.
 \frac{\tilde{\kappa}_{lm}}{\alpha_2}
 \right|_{\sigma_p}
 $$
 
 ## Multi-domain spectral methods
 
-|                |    |    | `j=N1+1` |    |    |                     |
-| :-------------: | -- | -- | :--------: | -- | -- | ------------------- |
-|    `i = 1`    | A1 | A1 |     A1     |    |    | $\sigma=1$        |
-|       ...       | A1 | A1 |     A1     |    |    | Domain1             |
-|  `i = N1+1`  | J  | J  |     J     | J  | J  | $\sigma=\sigma_p$ |
-|       ...       |    |    |     A2     | A2 | A2 | Domain0             |
-| `i = N1+N2+1` |    |    |     A2     | A2 | A2 | $\sigma=0$        |
+|                |        |        | `j=N1+1` |        |        |                     |
+| :-------------: | ------ | ------ | :--------: | ------ | ------ | ------------------- |
+|    `i = 1`    | `A1` | `A1` |   `A1`   |        |        | $\sigma=1$        |
+|       ...       | `A1` | `A1` |   `A1`   |        |        | `Domain1`         |
+|  `i = N1+1`  | `J`  | `J`  |   `J`   | `J`  | `J`  | $\sigma=\sigma_p$ |
+|       ...       |        |        |   `A2`   | `A2` | `A2` | `Domain0`         |
+| `i = N1+N2+1` |        |        |   `A2`   | `A2` | `A2` | $\sigma=0$        |
 
 ---
 
