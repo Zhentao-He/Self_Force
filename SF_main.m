@@ -1,4 +1,4 @@
-
+clear 
 M=1; rp = 6*M;
 q=1;l=1;m=1;
 N = 60;  
@@ -45,7 +45,29 @@ a0R(N+1)=0;
 a0I = imag(-2*s*x);
 a0I(N+1)=0;
 
+jump_row = zeros(1,2*N+1);
+jump_row(1:N) = Dx1(end,1:N);
+jump_row(N+2:end) = -Dx0(1,2:end);
+jump_row(N+1) =  Dx1(end) - Dx0(1);
+
 A11 = a2.*D2 + a1R.*D + diag(a0R);
+A11(N+1,:) = jump_row;
 A12 = -a1I.*D - diag(a0I);
 A22 = A11;
 A21 = -A12;
+A = [A11,A12;A21,A22];
+%
+Hp = 2*M/la *(log(1-xp) - 1/xp + log(xp) );
+Zp = xp/la*exp(s*Hp);
+klm_res = 2*M*fp*klm/Zp;
+jp = klm_res/(xp^2*(1-xp));
+SR = zeros(2*N+1,1);
+SR(N+1) = real(jp);
+SI = zeros(2*N+1,1);
+SI(N+1) = imag(jp);
+S_res = [SR;SI];
+
+phi = A\S_res;
+
+phiR = phi(1:2*N+1);
+phiI = phi(2*N+2:end);
