@@ -23,7 +23,7 @@
 # Schwartzschild circular orbit
 
 $$
-S_{\Phi}(t,r,\theta,\varphi) = -4\pi\rho= -4\pi\int 
+S_{\Phi}(t,r,\theta,\varphi) = -4\pi\rho= -4\pi q\int 
 \frac{\mathrm{d}\tau}{\mathrm{d}t_p} \mathrm{d}t_p
 \frac{1}{\sqrt{-g}}
 \delta(t-t_p)
@@ -65,7 +65,7 @@ $$
 
 $$
 t = \lambda[T-H(\sigma)], r= \frac{2M}{\sigma}, H(\sigma)= \frac{1}{2}
-[-\frac{1}{\sigma}+\ln(1-\sigma)+\ln(\sigma)]
+[\ln(1-\sigma)-\frac{1}{\sigma}+\ln(\sigma)]
 $$
 
 This gauge retains the minimal structure in the coordinate transformation needed to construct hyperboloidal slices. Consequently, the corresponding equations on black-hole perturbation theory assume the most simple form. [1809.02837, 1910.13452]
@@ -103,6 +103,46 @@ $$
 |  `i = N1+1`  | `J`  | `J`  |   `J`   | `J`  | `J`  | $\sigma=\sigma_p$ |
 |       ...       |        |        |   `A2`   | `A2` | `A2` | `Domain0`         |
 | `i = N1+N2+1` |        |        |   `A2`   | `A2` | `A2` | $\sigma=0$        |
+
+## Binary scalar particles
+
+$$
+r_1(t)=r_2(t)=\sqrt{r_p^2+d^2}\simeq r_p, \theta_1(t)=\theta_2(t)=\theta_p=\arctan\frac{d}{r_p},\varphi_1(t)=\omega_pt=\varphi_2(t)-\pi
+$$
+
+$$
+\left.
+g_{\mu\nu} \frac{\mathrm{d}x^{\mu}} {\mathrm{d}\tau} \frac{\mathrm{d}x^{\nu}} {\mathrm{d}\tau}
+\right|_{x_p} =-1 
+\rightarrow
+\left(
+\frac{\mathrm{d}\tau}{\mathrm{d}t_p} 
+\right)^2 =\frac{1}{f_p - (r_p\sin\theta_p\omega_p)^2}
+$$
+
+$$
+S_{\Phi}(t,r,\theta,\varphi) = -4\pi\rho= 
+-4\pi q\sum_{p=1}^{2}\int
+\frac{\mathrm{d}\tau}{\mathrm{d}t_p} \mathrm{d}t_p
+\frac{1}{\sqrt{-g}}
+\delta(t-t_p)
+\delta[\vec{x}-\vec{x}_p(t_p)]
+$$
+
+$$
+= \frac{-4\pi\sqrt{|f_p - (r_p\sin\theta_p\omega_p)^2|}}{r_p^2\sin\theta_p} \delta(r-r_p)\delta(\theta-\theta_p)[\delta(\varphi-\omega_pt)+\delta(\varphi-\omega_pt-\pi)]
+$$
+
+$$
+S_{lm\omega} = \frac{-8\pi\sqrt{|f_p - (r_p\sin\theta_p\omega_p)^2|}}{r_p^2\sin\theta_p} \delta(r-r_p)Y_{lm}(\theta_p,0)\delta(\omega-m\omega_p), \text{not vanishes when } m=\text{even.}
+$$
+
+Just replacing $\kappa_{lm}= \frac{-8\pi\sqrt{|f_p - (r_p\sin\theta_p\omega_p)^2|}}{r_p^2\sin\theta_p} Y_{lm}(\theta_p,0)$, and repeating the above process, one can obtain the retrad field.
+
+$$
+
+
+$$
 
 ---
 
