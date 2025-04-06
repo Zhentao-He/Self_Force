@@ -68,6 +68,12 @@ t = \lambda[T-H(\sigma)], r= \frac{2M}{\sigma}, H(\sigma)= \frac{1}{2}
 [\ln(1-\sigma)-\frac{1}{\sigma}+\ln(\sigma)]
 $$
 
+$$
+\sigma\rightarrow0, H\rightarrow -r_* = -(r+2M\ln r)
+\\
+\sigma\rightarrow1, H\rightarrow +r_* = \ln(r-2M)
+$$
+
 This gauge retains the minimal structure in the coordinate transformation needed to construct hyperboloidal slices. Consequently, the corresponding equations on black-hole perturbation theory assume the most simple form. [1809.02837, 1910.13452]
 
 Rescaled field
