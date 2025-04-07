@@ -19,6 +19,24 @@
 
   > $m$-decomposition has better numerical convergence than $lm$-decomposition in [2202.01794]
   >
+- [2411.14976] Leather, Benjamin
+  *Gravitational self-force with hyperboloidal slicing and spectral methods*
+
+  > still circular orbit in Schwartzshild BH
+  >
+- [2503.11523] Vishal, Manas / Field, Scott E. / Gottlieb, Sigal / Ryan, Jennifer
+  *Superconvergent Discontinuous Galerkin Method for the Scalar Teukolsky Equation on Hyperboloidal Domains: Efficient Waveform and Self-Force Computation*
+
+  > scalar self-force for circular orbit in Kerr BH
+  >
+- [1610.09319] Thornburg, Jonathan / Wardell, Barry
+  *Scalar self-force for highly eccentric equatorial orbits in Kerr spacetime*
+
+  > 1. hyperboloidal but not minimal gauge
+  > 2. Barack-Golbourn-Vega Detweiler effective-source regularization with a 4th order puncture field
+  > 3. a separate **time-domain** numerical evolution in 2+1 dimensions for each $m$ modes
+  > 4. Our numerical evolution uses Berger-Oliger mesh refinement with 4th order finite differencing in space and time.
+  >
 
 # Schwartzschild circular orbit
 
@@ -55,7 +73,7 @@ $$
 \Delta_{lm}\phi_{lm}(r)=S_{lm}^{\text{d}}(r)
 $$
 
-$S_{lm}^{\text{d}}(r)$ is called a distributional source with support on the particle’s orbit.
+$S_{lm}^{\text{d}}(r)$ is called a **distributional source** with support on the particle’s orbit.
 
 $$
 \Delta_{lm} = \partial_r^2 + (\frac{2}{r}+ \frac{f^\prime}{f})\partial_r + \frac{1}{f}(\frac{\omega_m^2}{f} - \frac{l(l+1)}{r^2})
@@ -76,7 +94,17 @@ $$
 
 This gauge retains the minimal structure in the coordinate transformation needed to construct hyperboloidal slices. Consequently, the corresponding equations on black-hole perturbation theory assume the most simple form. [1809.02837, 1910.13452]
 
+$$
+\partial_r=-\frac{\sigma}{2M^2}\partial_\sigma, \partial_r^2=\frac{\sigma^3}{2M^2}\partial_\sigma + \frac{\sigma^4}{4M^2}\partial_\sigma^2
+$$
+
 Rescaled field
+
+$$
+\sigma\rightarrow0,H\rightarrow -r_* = -(r+2M\ln r),
+\\
+e^{sH}=e^{+i\omega\lambda r_* }=e^{i\omega\lambda(r+2M\ln r)}
+$$
 
 $$
 \phi_{lm}=Z\tilde{\phi}_{lm}, Z=\frac{\sigma}{\lambda}e^{sH},s=-i\omega\lambda
@@ -149,6 +177,44 @@ $$
 
 
 $$
+
+## Analytic mesh-refinement
+
+$$
+\begin{equation}
+    x(y) = x_{\text{B}} 
+    \left(
+        1-\frac{2\sinh[\kappa(1-x_{\text{B}}y )]}{\sinh(2\kappa)}
+    \right)
+\end{equation}
+$$
+
+$y\in[-1,1] \rightarrow x\in[-1,1]$
+
+The limit $\kappa\rightarrow$ recovers the identity $x=y$.
+When $\kappa$ is large, $\mathrm{d}x/\mathrm{d}y$ is small near the $x_\text{b}$, which can resolve steep gradients in the region.
+
+$$
+\frac{\mathrm{d}f}{\mathrm{d}y} = \frac{ \mathrm{d} x}{\mathrm{d}y} \frac{\mathrm{d}f}{\mathrm{d}x}
+$$
+
+$$
+\frac{\mathrm{d}^2f}{\mathrm{d}x^2} = -\frac{1}{x_y^3}x_{yy}\frac{\mathrm{d}f}{\mathrm{d}y} + \frac{1}{x_y^2} \frac{\mathrm{d}^2f}{\mathrm{d}y^2}
+$$
+
+$$
+x_y:=\frac{ \mathrm{d} x}{\mathrm{d}y}=  \kappa x_{\text{B}}^2\frac{2\cosh[\kappa(1-x_{\text{B}}y )]}{\sinh(2\kappa)}
+$$
+
+$$
+x_{yy}=-2 k^2 x_{\text{B}}^3 \text{csch}(2 \kappa) \sinh [\kappa (1-x_{\text{B}} y)]
+$$
+
+```matlab
+xy = kappa * xB^2 * 2 * sinh(kappa*(1-xB*y)) / sinh(2*kappa); % col vec
+Dx = Dy./xy
+Dxx = - Dy .* xyy ./ xy.^3 + Dy.^2 ./ xy.^2;
+```
 
 ---
 
@@ -242,41 +308,3 @@ $$
     \overset{T=0}{=}e^\theta_{Y}
 \end{align}
 $$
-
-## Analytic mesh-refinement
-
-$$
-\begin{equation}
-    x(y) = x_{\text{B}} 
-    \left(
-        1-\frac{2\sinh[\kappa(1-x_{\text{B}}y )]}{\sinh(2\kappa)}
-    \right)
-\end{equation}
-$$
-
-$y\in[-1,1] \rightarrow x\in[-1,1]$
-
-The limit $\kappa\rightarrow$ recovers the identity $x=y$.
-When $\kappa$ is large, $\mathrm{d}x/\mathrm{d}y$ is small near the $x_\text{b}$, which can resolve steep gradients in the region.
-
-$$
-\frac{\mathrm{d}f}{\mathrm{d}y} = \frac{ \mathrm{d} x}{\mathrm{d}y} \frac{\mathrm{d}f}{\mathrm{d}x}
-$$
-
-$$
-\frac{\mathrm{d}^2f}{\mathrm{d}x^2} = -\frac{1}{x_y^3}x_{yy}\frac{\mathrm{d}f}{\mathrm{d}y} + \frac{1}{x_y^2} \frac{\mathrm{d}^2f}{\mathrm{d}y^2}
-$$
-
-$$
-x_y:=\frac{ \mathrm{d} x}{\mathrm{d}y}=  \kappa x_{\text{B}}^2\frac{2\cosh[\kappa(1-x_{\text{B}}y )]}{\sinh(2\kappa)}
-$$
-
-$$
-x_{yy}=-2 k^2 x_{\text{B}}^3 \text{csch}(2 \kappa) \sinh [\kappa (1-x_{\text{B}} y)]
-$$
-
-```matlab
-xy = kappa * xB^2 * 2 * sinh(kappa*(1-xB*y)) / sinh(2*kappa); % col vec
-Dx = Dy./xy
-Dxx = - Dy .* xyy ./ xy.^3 + Dy.^2 ./ xy.^2;
-```
