@@ -1,4 +1,4 @@
-# Refs
+=# Refs
 
 - [2202.01794] Panosso Macedo, Rodrigo / Leather, Benjamin / Warburton, Niels / Wardell, Barry / Zenginoğlu, Anıl
   *Hyperboloidal method for frequency-domain self-force calculations*
@@ -88,9 +88,10 @@ $$
 
 $$
 \sigma\rightarrow0, H\rightarrow -r_* = -(r+2M\ln r)
-\\
-\sigma\rightarrow1, H\rightarrow +r_* = \ln(r-2M)
 $$
+
+$$\sigma\rightarrow1, H\rightarrow +r_* = \ln(r-2M)$$
+
 
 This gauge retains the minimal structure in the coordinate transformation needed to construct hyperboloidal slices. Consequently, the corresponding equations on black-hole perturbation theory assume the most simple form. [1809.02837, 1910.13452]
 
@@ -101,12 +102,6 @@ $$
 Rescaled field
 
 $$
-\sigma\rightarrow0,H\rightarrow -r_* = -(r+2M\ln r),
-\\
-e^{sH}=e^{+i\omega\lambda r_* }=e^{i\omega\lambda(r+2M\ln r)}
-$$
-
-$$
 \phi_{lm}=Z\tilde{\phi}_{lm}, Z=\frac{\sigma}{\lambda}e^{sH},s=-i\omega\lambda
 $$
 
@@ -115,35 +110,6 @@ $$
 $$
 
 The retarded behavior is not imposed through a separate boundary condition, but through the equation itself.
-
-### Asymptotic analysis
-
-$$
-\left[\frac{\mathrm{d}^2}{\mathrm{d}\sigma^2} + p(\sigma) \frac{\mathrm{d}}{\mathrm{d}\sigma} +q(\sigma)\right]\tilde{\phi}=0
-$$
-
-$$
-p(\sigma)=\frac{\alpha_1}{\alpha_2},\alpha_2=\sigma^2(1-\sigma)
-$$
-
-$\sigma=0$ is a non-regular singular point.
-
-$$
-p(\sigma)=\sigma^{-2}\sum_{n=0}^{\infty}a_n\sigma^n,q(\sigma)=\sigma^{-2}\sum_{n=0}^{\infty}b_n\sigma^n, \tilde{\phi}(\sigma)=\sigma^{\rho}\sum_{n=0}^{\infty}c_n\sigma^n
-$$
-
-The indicial equation for $\rho$ is 
-
-$$
-a_0c_0\rho=0
-$$
-
-where $a_0,b_0,c_0\neq0$ is by definition. Thus $\rho=0$. The recurrence relation for $c_k$ is
-
-$$
-c_{k+1}= - \frac{c_kk(k-1)+\sum_{n=0}^{k}(a_{k+1-n}n+b_{k-n})c_n}
-{(k+1)a_0}
-$$
 
 The delta-function source in the right-hand side imposes a jump in the field’s first derivative in the form
 
@@ -156,6 +122,65 @@ $$
 \frac{\tilde{\kappa}_{lm}}{\alpha_2}
 \right|_{\sigma_p}
 $$
+
+### Asymptotic analysis
+$$
+e^{sH}=e^{+i\omega\lambda r_* }=e^{i\omega\lambda(r+2M\ln r)}, \sigma\rightarrow 0
+$$
+This behavior is due to the pathological properties of the bifurcation sphere and of spatial infinity: The representation of the physical boundary conditions in these domains is unphysical. [1102.2451]
+
+Switching to horizon-penetrating, hyperboloidal hypersurfaces is equivalent to the rescaling of the master function for the radial equation in frequency domain
+
+$$
+\begin{align}
+  \Phi 
+  &= \sum_{l=0}^{\infty}\sum_{m=-l}^{l} \phi_{lm}(r)Y_{lm}e^{-i\omega_mt}
+  \\
+  &= \sum_{l=0}^{\infty}\sum_{m=-l}^{l} \bar{\phi}_{lm}(\sigma)Y_{lm}e^{-i\omega_m\lambda T}
+\end{align}
+$$
+i.e.
+$$
+\phi_{lm}(r) = \bar{\phi}_{lm}e^{sH}
+$$
+
+Extracting the scalar field’s fall-oﬀ behavior $\sim1/r$ 
+$$
+\phi_{lm}(r) = \bar{\phi}_{lm}e^{sH}=\frac{\sigma}{\lambda}e^{sH}\tilde{\phi}_{lm}
+$$
+
+will simplify the equation
+$$
+\left[\frac{\mathrm{d}^2}{\mathrm{d}\sigma^2} + p(\sigma) \frac{\mathrm{d}}{\mathrm{d}\sigma} +q(\sigma)\right]\tilde{\phi}=0,
+$$
+where
+$$
+p(\sigma)=\frac{\alpha_1}{\alpha_2},\alpha_2=\sigma^2(1-\sigma),\alpha_1=2\sigma(2-3\sigma)+s(1-2\sigma^2)
+$$
+
+$$
+q=\frac{\alpha_0}{\alpha_2}, \alpha_0=-[l(l+1)+\sigma(1+2s)+s^2(1+\sigma)]
+$$
+$\sigma=0$ is a non-regular singular point.
+
+$$
+p(\sigma)=\sigma^{-2}\sum_{n=0}^{\infty}a_n\sigma^n,q(\sigma)=\sigma^{-2}\sum_{n=0}^{\infty}b_n\sigma^n, \tilde{\phi}(\sigma)=\sigma^{\rho}\sum_{n=0}^{\infty}c_n\sigma^n
+$$
+
+The indicial equation for $\rho$ is
+
+$$
+a_0c_0\rho=0
+$$
+
+where $a_0,b_0,c_0\neq0$ is by definition. Thus $\rho=0$. The recurrence relation for $c_k$ is
+
+$$
+c_{k+1}= - \frac{c_kk(k-1)+\sum_{n=0}^{k}(a_{k+1-n}n+b_{k-n})c_n}
+{(k+1)a_0}
+$$
+
+
 
 ## Multi-domain spectral methods
 
@@ -202,10 +227,6 @@ $$
 
 Just replacing $\kappa_{lm}= \frac{-8\pi\sqrt{|f_p - (r_p\sin\theta_p\omega_p)^2|}}{r_p^2\sin\theta_p} Y_{lm}(\theta_p,0)$, and repeating the above process, one can obtain the retrad field.
 
-$$
-
-
-$$
 
 ## Analytic mesh-refinement
 
