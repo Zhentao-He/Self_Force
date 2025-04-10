@@ -180,7 +180,59 @@ c_{k+1}= - \frac{c_kk(k-1)+\sum_{n=0}^{k}(a_{k+1-n}n+b_{k-n})c_n}
 {(k+1)a_0}
 $$
 
+### Peeling theorem 
+The radial Teukolsky equation in BL coordinates reads [Teukolsky, Astrophys.J. 185 (1973)]
 
+$$ \Delta ^{-s} \frac{\mathrm{d}}{\mathrm{d}r}
+\left(
+  \Delta ^{s+1} \frac{\mathrm{d}R}{\mathrm{d}r}
+  \right)
+  +
+   \frac{ V}{\Delta}
+  R=0
+$$ 
+where $V=K^2-2\mathrm{i}s(r-M)K + \Delta(4\mathrm{i}s\omega r -\lambda)$,$K=(r^2+a^2)\omega-am,\lambda=\lambda(l,m,a\omega,s),\Delta = r^2-2Mr+a^2$.
+
+It is useful to make the transformation to cancel the first derivative
+
+$$
+Y = \Delta^{s/2}(r^2+a^2)^{1/2}R, \mathrm{d}r_*/\mathrm{d}r=(r^2+a^2)/\Delta 
+$$
+
+$$
+\frac{\mathrm{d^2}Y}{\mathrm{d}r_*^2} + 
+\left[
+  \frac{V}{(r^2+a^2)^2}-G^2-G_{,r_*}
+  \right]Y=0
+$$
+where $$G=\frac{s (r-M)}{a^2+r^2}+\frac{\Delta  r}{\left(a^2+r^2\right)^2}$$
+
+When $r\rightarrow\infty$, $Y\sim r^{s+1}R$
+
+$$
+\frac{V}{(r^2+a^2)^2}\simeq\omega^2
++\frac{2\mathrm{i}s\omega}{r} 
++\frac{2\mathrm{i}s\omega M-\lambda}{r^2}
++\mathcal{O}(\frac{1}{r^4})
+$$
+
+$$
+-G^2-G_{,r_*} \simeq
+-\frac{s(s+1)}{r^2}
++\mathcal{O}(\frac{1}{r^3})
+$$
+
+Assuming $Y\sim r^ke^{\pm\mathrm{i}\omega r_*}$
+
+$$
+\frac{\mathrm{d^2}Y}{\mathrm{d}r_*^2}\simeq
+\left[
+  -\omega^2 \pm \frac{2\mathrm{i}k\omega}{r}+\frac{k(k-1)}{r^2}+\mathcal{O}(\frac{1}{r^3})
+\right]Y
+$$
+and matching the coefficient of $1/r$, one obtains $k=\mp s$, which is consistent with the peeling-off behavior.
+
+However, the coefficient of $1/r^2$ gives a diffirent result.
 
 ## Multi-domain spectral methods
 
