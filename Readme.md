@@ -161,7 +161,7 @@ $$
 $$
 q=\frac{\alpha_0}{\alpha_2}, \alpha_0=-[l(l+1)+\sigma(1+2s)+s^2(1+\sigma)]
 $$
-$\sigma=0$ is a non-regular singular point.
+$\sigma=0$ is a irregular singular point.
 
 $$
 p(\sigma)=\sigma^{-2}\sum_{n=0}^{\infty}a_n\sigma^n,q(\sigma)=\sigma^{-2}\sum_{n=0}^{\infty}b_n\sigma^n, \tilde{\phi}(\sigma)=\sigma^{\rho}\sum_{n=0}^{\infty}c_n\sigma^n
