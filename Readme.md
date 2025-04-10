@@ -116,6 +116,35 @@ $$
 
 The retarded behavior is not imposed through a separate boundary condition, but through the equation itself.
 
+### Asymptotic analysis
+
+$$
+\left[\frac{\mathrm{d}^2}{\mathrm{d}\sigma^2} + p(\sigma) \frac{\mathrm{d}}{\mathrm{d}\sigma} +q(\sigma)\right]\tilde{\phi}=0
+$$
+
+$$
+p(\sigma)=\frac{\alpha_1}{\alpha_2},\alpha_2=\sigma^2(1-\sigma)
+$$
+
+$\sigma=0$ is a non-regular singular point.
+
+$$
+p(\sigma)=\sigma^{-2}\sum_{n=0}^{\infty}a_n\sigma^n,q(\sigma)=\sigma^{-2}\sum_{n=0}^{\infty}b_n\sigma^n, \tilde{\phi}(\sigma)=\sigma^{\rho}\sum_{n=0}^{\infty}c_n\sigma^n
+$$
+
+The indicial equation for $\rho$ is 
+
+$$
+a_0c_0\rho=0
+$$
+
+where $a_0,b_0,c_0\neq0$ is by definition. Thus $\rho=0$. The recurrence relation for $c_k$ is
+
+$$
+c_{k+1}= - \frac{c_kk(k-1)+\sum_{n=0}^{k}(a_{k+1-n}n+b_{k-n})c_n}
+{(k+1)a_0}
+$$
+
 The delta-function source in the right-hand side imposes a jump in the field’s first derivative in the form
 
 $$
