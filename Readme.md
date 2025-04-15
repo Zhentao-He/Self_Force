@@ -1,4 +1,4 @@
-=# Refs
+# Refs
 
 - [2202.01794] Panosso Macedo, Rodrigo / Leather, Benjamin / Warburton, Niels / Wardell, Barry / Zenginoğlu, Anıl
   *Hyperboloidal method for frequency-domain self-force calculations*
