@@ -90,8 +90,9 @@ $$
 \sigma\rightarrow0, H\rightarrow -r_* = -(r+2M\ln r)
 $$
 
-$$\sigma\rightarrow1, H\rightarrow +r_* = \ln(r-2M)$$
-
+$$
+\sigma\rightarrow1, H\rightarrow +r_* = \ln(r-2M)
+$$
 
 This gauge retains the minimal structure in the coordinate transformation needed to construct hyperboloidal slices. Consequently, the corresponding equations on black-hole perturbation theory assume the most simple form. [1809.02837, 1910.13452]
 
@@ -124,9 +125,11 @@ $$
 $$
 
 ### Asymptotic analysis
+
 $$
 e^{sH}=e^{+i\omega\lambda r_* }=e^{i\omega\lambda(r+2M\ln r)}, \sigma\rightarrow 0
 $$
+
 This behavior is due to the pathological properties of the bifurcation sphere and of spatial infinity: The representation of the physical boundary conditions in these domains is unphysical. [1102.2451]
 
 Switching to horizon-penetrating, hyperboloidal hypersurfaces is equivalent to the rescaling of the master function for the radial equation in frequency domain
@@ -139,21 +142,27 @@ $$
   &= \sum_{l=0}^{\infty}\sum_{m=-l}^{l} \bar{\phi}_{lm}(\sigma)Y_{lm}e^{-i\omega_m\lambda T}
 \end{align}
 $$
+
 i.e.
+
 $$
 \phi_{lm}(r) = \bar{\phi}_{lm}e^{sH}
 $$
 
-Extracting the scalar field’s fall-oﬀ behavior $\sim1/r$ 
+Extracting the scalar field’s fall-oﬀ behavior $\sim1/r$
+
 $$
 \phi_{lm}(r) = \bar{\phi}_{lm}e^{sH}=\frac{\sigma}{\lambda}e^{sH}\tilde{\phi}_{lm}
 $$
 
 will simplify the equation
+
 $$
 \left[\frac{\mathrm{d}^2}{\mathrm{d}\sigma^2} + p(\sigma) \frac{\mathrm{d}}{\mathrm{d}\sigma} +q(\sigma)\right]\tilde{\phi}=0,
 $$
+
 where
+
 $$
 p(\sigma)=\frac{\alpha_1}{\alpha_2},\alpha_2=\sigma^2(1-\sigma),\alpha_1=2\sigma(2-3\sigma)+s(1-2\sigma^2)
 $$
@@ -161,6 +170,7 @@ $$
 $$
 q=\frac{\alpha_0}{\alpha_2}, \alpha_0=-[l(l+1)+\sigma(1+2s)+s^2(1+\sigma)]
 $$
+
 $\sigma=0$ is a irregular singular point.
 
 $$
@@ -180,23 +190,26 @@ c_{k+1}= - \frac{c_kk(k-1)+\sum_{n=0}^{k}(a_{k+1-n}n+b_{k-n})c_n}
 {(k+1)a_0}
 $$
 
-### Peeling theorem 
+### Peeling theorem
+
 The radial Teukolsky equation in BL coordinates reads [Teukolsky, Astrophys.J. 185 (1973)]
 
-$$ \Delta ^{-s} \frac{\mathrm{d}}{\mathrm{d}r}
+$$
+\Delta ^{-s} \frac{\mathrm{d}}{\mathrm{d}r}
 \left(
   \Delta ^{s+1} \frac{\mathrm{d}R}{\mathrm{d}r}
   \right)
   +
    \frac{ V}{\Delta}
   R=0
-$$ 
+$$
+
 where $V=K^2-2\mathrm{i}s(r-M)K + \Delta(4\mathrm{i}s\omega r -\lambda)$,$K=(r^2+a^2)\omega-am,\lambda=\lambda(l,m,a\omega,s),\Delta = r^2-2Mr+a^2$.
 
 It is useful to make the transformation to cancel the first derivative
 
 $$
-Y = \Delta^{s/2}(r^2+a^2)^{1/2}R, \mathrm{d}r_*/\mathrm{d}r=(r^2+a^2)/\Delta 
+Y = \Delta^{s/2}(r^2+a^2)^{1/2}R, \mathrm{d}r_*/\mathrm{d}r=(r^2+a^2)/\Delta
 $$
 
 $$
@@ -205,7 +218,12 @@ $$
   \frac{V}{(r^2+a^2)^2}-G^2-G_{,r_*}
   \right]Y=0
 $$
-where $$G=\frac{s (r-M)}{a^2+r^2}+\frac{\Delta  r}{\left(a^2+r^2\right)^2}$$
+
+where 
+
+$$
+G=\frac{s (r-M)}{a^2+r^2}+\frac{\Delta  r}{\left(a^2+r^2\right)^2}
+$$
 
 When $r\rightarrow\infty$, $Y\sim r^{s+1}R$
 
@@ -230,6 +248,7 @@ $$
   -\omega^2 \pm \frac{2\mathrm{i}k\omega}{r}+\frac{k(k-1)}{r^2}+\mathcal{O}(\frac{1}{r^3})
 \right]Y
 $$
+
 and matching the coefficient of $1/r$, one obtains $k=\mp s$, which is consistent with the peeling-off behavior.
 
 However, the coefficient of $1/r^2$ gives a diffirent result.
@@ -279,7 +298,6 @@ $$
 
 Just replacing $\kappa_{lm}= \frac{-8\pi\sqrt{|f_p - (r_p\sin\theta_p\omega_p)^2|}}{r_p^2\sin\theta_p} Y_{lm}(\theta_p,0)$, and repeating the above process, one can obtain the retrad field.
 
-
 ## Analytic mesh-refinement
 
 $$
@@ -315,7 +333,7 @@ $$
 ```matlab
 xy = kappa * xB^2 * 2 * sinh(kappa*(1-xB*y)) / sinh(2*kappa); % col vec
 Dx = Dy./xy
-Dxx = - Dy .* xyy ./ xy.^3 + Dy.^2 ./ xy.^2;
+Dxx = - Dy .* xyy ./ xy.^3 + Dy^2 ./ xy.^2;
 ```
 
 ---
