@@ -219,7 +219,7 @@ $$
   \right]Y=0
 $$
 
-where 
+where
 
 $$
 G=\frac{s (r-M)}{a^2+r^2}+\frac{\Delta  r}{\left(a^2+r^2\right)^2}
@@ -298,7 +298,7 @@ $$
 
 Just replacing $\kappa_{lm}= \frac{-8\pi\sqrt{|f_p - (r_p\sin\theta_p\omega_p)^2|}}{r_p^2\sin\theta_p} Y_{lm}(\theta_p,0)$, and repeating the above process, one can obtain the retrad field.
 
-## Analytic mesh-refinement
+## Analytic Mesh-Refinement(AnMR)
 
 $$
 \begin{equation}
@@ -335,6 +335,8 @@ xy = kappa * xB^2 * 2 * sinh(kappa*(1-xB*y)) / sinh(2*kappa); % col vec
 Dx = Dy./xy
 Dxx = - Dy .* xyy ./ xy.^3 + Dy^2 ./ xy.^2;
 ```
+
+`AnMR` dose not affect `filter` (`real_to_cheb` and `cheb_to_real`), but affects `cheb_interpolate`.
 
 ---
 
