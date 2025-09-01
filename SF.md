@@ -1,13 +1,13 @@
 ## Electromagnetic self-force
 $$
 \begin{equation}
-    \Box A^a - R^{a}{}_b A^a = -4\pi j^b
+    \Box A^a - R^{a}{}_b A^b = -4\pi j^a
 \end{equation}
 $$
 
 The potential $A^a$ can be divided into two parts: a singular part that exert no force on the particle and a regular part responsible for self-force [Detweiler,Whiting (2003)].
 
-Green’s functions in curved spacetime
+### Green’s functions in curved spacetime
 
 the reciprocity relation: the retarded Green’s function becomes the advanced Green’s function (and vice versa) when $x$ and $z$ are interchanged.
 $$
@@ -147,7 +147,7 @@ $$
 \end{equation}
 $$
 
-## Motion of an electric charge in curved spacetime
+### Motion of an electric charge in curved spacetime
 DeWitt and Brehme(1960), Hobbs(1968)
 $$
 \begin{equation}
@@ -166,4 +166,100 @@ $$
 - In flat spacetime the Ricci tensor is zero, the tail integral disappears and this reduces to Dirac’s result (1938).
 - In curved spacetime, the self-force depends not only on the current state of motion of the particle, but also on its past history, which represents radiation emitted earlier and coming back to the particle after interacting with the spacetime curvature.
 
-# Local expansion
+## Local expansion
+
+$$
+\begin{equation}
+    A^{\text{S}} (x) 
+    = \frac{e}{2}
+    \left(
+    \left.
+     \frac{U(x,z)}{u^{a^\prime}\nabla_{a^\prime}\sigma} 
+     \right|^{u}_{v}
+     -\int^{v}_{u} V(x,z)\mathrm{d}\tau
+    \right)
+\end{equation}
+$$
+
+We first choose a reference point $\bar{x} =z(\bar{\tau})$ on the particle’s worldline.
+
+the strategy: we expand functions of $(x,z)$ around $(x,\bar{x})$, and expand them around the coincidence limit $x=\bar{x}$.
+
+1. 
+$$
+\begin{equation}
+    \int^{v}_{u} V(x,z)\mathrm{d}\tau
+    = \sum_{k\geq0} \frac{(\Delta\tau_v)^{k+1}-(\Delta\tau_u)^{k+1}}{(k+1)!}
+    \frac{\mathrm{d}^k}{\mathrm{d}\bar\tau^k}
+    V(x,\bar{x})
+\end{equation}
+$$
+where $\Delta\tau_{v}=v-\bar\tau,\Delta\tau_{u}=u-\bar\tau.$
+Completing the expansions requires the quantities $\Delta\tau_{v/u}$, which can be found by expanding the relation
+$\sigma(x,z(\bar\tau+\Delta\tau_{v/u}))=0$
+
+$$
+\begin{equation}
+0=\sigma(x,\bar{x})+ \Delta\tau u^{\bar{a}}\sigma_\bar{a}+\frac12(\Delta\tau)^2(a^{\bar{a}}\sigma_\bar{a}+u^{\bar{a}}u^{\bar{b}}\sigma_{\bar{a}\bar{b}}) + \cdots
+\end{equation}
+$$
+where $\sigma_{\bar{a}}=\nabla_{\bar{a}}\sigma$.
+
+To solve this eq., we introduce a parameter $\lambda=1$ that counts powers of distance $\sigma$ from the particle.
+
+Second and higher derivatives of $\sigma$ can be reexpanded in a covariant Taylor series in the vector [?].
+
+$$
+\begin{equation}
+\sigma_{\bar{a}\bar{b}}=g_{\bar{a}\bar{b}}+
+\sum_{k\geq2}\lambda^k p^{\bar{a}_1\cdots\bar{a}_k}(\bar{x})
+\sigma_{\bar{a}_{1}}\cdots\sigma_{\bar{a}_k}
+\end{equation}
+$$
+
+We can derive, by induction, 
+$$
+\begin{equation}
+    \Delta\tau = r+\epsilon s+ \sum_{k\geq2}\lambda^k
+    \left[
+        \frac{
+        q_{1}^{\bar{a}_1\cdots\bar{a}_{2k}}(\bar{x})
+        \sigma_{\bar{a}_{1}}\cdots\sigma_{\bar{a}_{2k}}
+        }
+        {(\epsilon s)^k}
+        +
+        \frac{
+        q_{2}^{\bar{a}_1\cdots\bar{a}_{2k-1}}(\bar{x})
+        \sigma_{\bar{a}_{1}}\cdots\sigma_{\bar{a}_{2k-1}}
+        }
+        {(\epsilon s)^{k-1}}
+    \right]
+\end{equation}
+$$
+where $\epsilon = 1$ for the advanced time and $−1$ for the retarded time.
+The quantities
+$$
+\begin{equation}
+r:=u^{\bar{a}}\sigma_{\bar{a}},\quad
+s:=\sqrt{(g^{\bar{a}\bar{b}}+u^{\bar{a}}u^{\bar{b}})\sigma_{\bar{a}}\sigma_{\bar{b}}}
+\end{equation}
+$$
+are the components of $\sigma_{\bar{a}}$ parallel to and orthogonal to the worldline.
+
+$$
+\begin{equation}
+A^{\text{S}} (x) 
+=\frac{e}{s}+
+\sum_{n\geq0}
+\lambda^n
+        \frac{
+        \Phi^{\bar{a}_1\cdots\bar{a}_{3n+3}}(\bar{x})
+        \sigma_{\bar{a}_{1}}\cdots\sigma_{\bar{a}_{3n+3}}
+        }
+        { s^{2n+3}}
+\end{equation}
+$$
+
+### coordinates
+
+
