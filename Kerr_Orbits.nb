@@ -1,0 +1,187 @@
+(* Content-type: application/vnd.wolfram.cdf.text *)
+
+(*** Wolfram CDF File ***)
+(* http://www.wolfram.com/cdf *)
+
+(* CreatedBy='Wolfram 14.1' *)
+
+(*************************************************************************)
+(*                                                                       *)
+(*                                                                       *)
+(*  This file was created under the Wolfram Enterprise licensing terms.  *)
+(*                                                                       *)
+(*       For additional information concerning CDF licensing see:        *)
+(*                                                                       *)
+(*        www.wolfram.com/cdf/adopting-cdf/licensing-options.html        *)
+(*                                                                       *)
+(*                                                                       *)
+(*                                                                       *)
+(*************************************************************************)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[      1060,         20]
+NotebookDataLength[      5204,        166]
+NotebookOptionsPosition[      5042,        150]
+NotebookOutlinePosition[      5447,        167]
+CellTagsIndexPosition[      5404,        164]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["6. Orbital dynamics in Kerr spacetime", "Chapter",
+ CellChangeTimes->{{3.957492066839149*^9, 
+  3.957492111284524*^9}},ExpressionUUID->"5e14fcb8-68b4-45ed-a977-\
+80e0956c5c1d"],
+
+Cell[CellGroupData[{
+
+Cell["6.1 Geodesic motion", "Section",
+ CellChangeTimes->{{3.957492118626786*^9, 
+  3.957492120941387*^9}},ExpressionUUID->"44d03851-825b-4053-b3f0-\
+097471d8ac41"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+6.1.1 Constants of motion, separable geodesic equation, and conventions\
+\>", "Subsection",
+ CellChangeTimes->{{3.9574921270153112`*^9, 
+  3.9574921405178957`*^9}},ExpressionUUID->"d6f0ccb7-bbfd-4fe3-9d43-\
+d6aec86e6293"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"P", "[", "r_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"\[CapitalEpsilon]", 
+     RowBox[{"(", 
+      RowBox[{
+       SuperscriptBox["r", "2"], "+", 
+       SuperscriptBox["a", "2"]}], ")"}]}], "-", 
+    RowBox[{"a", "*", "Lz"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[CapitalDelta]", "=", 
+   RowBox[{
+    SuperscriptBox["r", "2"], "-", 
+    RowBox[{"2", "M", "*", "r"}], "+", 
+    SuperscriptBox["a", "2"]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"R", "[", "r_", "]"}], ":=", 
+  RowBox[{
+   SuperscriptBox[
+    RowBox[{"P", "[", "r", "]"}], "2"], "-", 
+   RowBox[{"\[CapitalDelta]", 
+    RowBox[{"(", 
+     RowBox[{
+      SuperscriptBox["r", "2"], "+", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"a", "*", "\[CapitalEpsilon]"}], "-", "Lz"}], ")"}], "2"], 
+      "+", "Q"}], ")"}]}]}]}]}], "Input",
+ CellChangeTimes->{{3.957492164419558*^9, 3.957492175532539*^9}, {
+  3.957492210966374*^9, 3.957492296764688*^9}},
+ CellLabel->"In[8]:=",ExpressionUUID->"e0be1bf5-893e-49da-afcf-ab688de0f132"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"R", "[", "r", "]"}], "//", "Expand"}], "//", 
+  RowBox[{
+   RowBox[{"Collect", "[", 
+    RowBox[{"#", ",", 
+     RowBox[{"{", "r", "}"}]}], "]"}], "&"}]}]], "Input",
+ CellChangeTimes->{{3.957492303734645*^9, 3.957492322369842*^9}},
+ CellLabel->"In[12]:=",ExpressionUUID->"1742c79c-0115-42a9-9409-8f976c152f8b"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"-", 
+    SuperscriptBox["a", "2"]}], " ", "Q"}], "+", 
+  RowBox[{"2", " ", "M", " ", 
+   SuperscriptBox["r", "3"]}], "+", 
+  RowBox[{
+   SuperscriptBox["r", "4"], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", "1"}], "+", 
+     SuperscriptBox["\[CapitalEpsilon]", "2"]}], ")"}]}], "+", 
+  RowBox[{
+   SuperscriptBox["r", "2"], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", 
+      SuperscriptBox["a", "2"]}], "-", 
+     SuperscriptBox["Lz", "2"], "-", "Q", "+", 
+     RowBox[{
+      SuperscriptBox["a", "2"], " ", 
+      SuperscriptBox["\[CapitalEpsilon]", "2"]}]}], ")"}]}], "+", 
+  RowBox[{"r", " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"2", " ", 
+      SuperscriptBox["Lz", "2"], " ", "M"}], "+", 
+     RowBox[{"2", " ", "M", " ", "Q"}], "-", 
+     RowBox[{"4", " ", "a", " ", "Lz", " ", "M", " ", "\[CapitalEpsilon]"}], 
+     "+", 
+     RowBox[{"2", " ", 
+      SuperscriptBox["a", "2"], " ", "M", " ", 
+      SuperscriptBox["\[CapitalEpsilon]", "2"]}]}], ")"}]}]}]], "Output",
+ CellChangeTimes->{{3.957492306563011*^9, 3.957492322791519*^9}},
+ CellLabel->"Out[12]=",ExpressionUUID->"57970c4c-4b68-46fb-9952-05eb0eb482da"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["6.1.2 Quasi - Keplerian parametrization", "Subsection",
+ CellChangeTimes->{{3.957492560679146*^9, 
+  3.9574925685096817`*^9}},ExpressionUUID->"beee4b3e-90ba-4f57-b4cc-\
+e263b064c6de"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{808, 818},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+FrontEndVersion->"14.1 for Mac OS X ARM (64-bit) \
+(2024\:5e747\:670816\:65e5)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"6c450b3e-59f9-4e9d-ab89-44156c89654f"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[1482, 35, 182, 3, 171, "Chapter",ExpressionUUID->"5e14fcb8-68b4-45ed-a977-80e0956c5c1d"],
+Cell[CellGroupData[{
+Cell[1689, 42, 164, 3, 99, "Section",ExpressionUUID->"44d03851-825b-4053-b3f0-097471d8ac41"],
+Cell[CellGroupData[{
+Cell[1878, 49, 231, 5, 118, "Subsection",ExpressionUUID->"d6f0ccb7-bbfd-4fe3-9d43-d6aec86e6293"],
+Cell[2112, 56, 1107, 33, 111, "Input",ExpressionUUID->"e0be1bf5-893e-49da-afcf-ab688de0f132"],
+Cell[CellGroupData[{
+Cell[3244, 93, 357, 9, 63, "Input",ExpressionUUID->"1742c79c-0115-42a9-9409-8f976c152f8b"],
+Cell[3604, 104, 1194, 35, 86, "Output",ExpressionUUID->"57970c4c-4b68-46fb-9952-05eb0eb482da"]
+}, Open  ]]
+}, Open  ]],
+Cell[4825, 143, 189, 3, 79, "Subsection",ExpressionUUID->"beee4b3e-90ba-4f57-b4cc-e263b064c6de"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

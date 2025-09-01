@@ -161,7 +161,7 @@ $$
 \left[\frac{\mathrm{d}^2}{\mathrm{d}\sigma^2} + p(\sigma) \frac{\mathrm{d}}{\mathrm{d}\sigma} +q(\sigma)\right]\tilde{\phi}=0,
 $$
 
-where
+where 
 
 $$
 p(\sigma)=\frac{\alpha_1}{\alpha_2},\alpha_2=\sigma^2(1-\sigma),\alpha_1=2\sigma(2-3\sigma)+s(1-2\sigma^2)
