@@ -427,6 +427,6 @@ $$
     \overset{Z=0}{=}e^t_{Z}
     \\
     \frac{\partial \theta}{\partial Y}&= \frac{e^\theta_{Y}}{\sqrt{1-(e^\theta_{Y}Y)^2}}
-    \overset{T=0}{=}e^\theta_{Y}
+    \overset{Y=0}{=}e^\theta_{Y}
 \end{align}
 $$
