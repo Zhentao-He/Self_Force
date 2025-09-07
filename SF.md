@@ -262,4 +262,195 @@ $$
 
 ### coordinates
 
+To express the expansion in any given coordinate system, we reexpand for small coordinate distances $\Delta y^{\bar\alpha}=y^\alpha(x)-y^{\bar\alpha}(\bar{x})$
 
+$$
+\begin{equation}
+\sigma_{\bar\alpha} = \sum_{n\geq1} s_{\bar\alpha\bar\beta_1\cdots\bar\beta_n}(\bar x)
+\Delta y^{\bar\beta_1}\cdots\Delta y^{\bar\beta_n}
+=-g_{\bar\alpha\bar\beta}\Delta y^{\bar\beta}+\cdots
+\end{equation}
+$$
+
+$$
+\begin{equation}
+s=\rho\sqrt{1+\sum_{k\geq1} \lambda^k \frac{S_{\bar\beta_1\cdots\bar\beta_{k+2}}(\bar x)
+\Delta y^{\bar\beta_1}\cdots\Delta y^{\bar\beta_{k+2}}}{\rho^2}}
+\end{equation}
+$$
+with the leading term $\rho:=\sqrt{(g^{\bar{a}\bar{b}}+u^{\bar{a}}u^{\bar{b}})\Delta y_{\bar{a}}\Delta y_{\bar{b}}}$.
+
+
+$$
+\begin{equation}
+A^{\text{S}} (x) 
+=\frac{e}{\rho}+
+\sum_{n\geq0}
+\lambda^n
+        \frac{
+        Q^{\bar{a}_1\cdots\bar{a}_{3n+3}}(\bar{x})
+        \Delta y_{\bar{a}_{1}}\cdots\Delta y_{\bar{a}_{3n+3}}
+        }
+        { \rho^{2n+3}}
+\end{equation}
+$$
+
+If we now specialise to a local coordinate system $(T,X^i)$, in which
+- $X^i=0$ on the particle’s worldline
+- $g_{\bar\alpha\bar\beta}(T,X^i=0) = \eta_{\bar\alpha\bar\beta}$
+- $\left(\dfrac{\partial}{\partial T}\right)^{\bar\alpha}=u^{\bar\alpha}$
+
+$$
+\begin{equation}
+A^{\text{S}} = \sum_{n\geq-1}\rho^n Q_{i_1\cdots i_{3n+3}}(T)
+N^{i_{1}}\cdots N^{i_{3n+3}}
+\end{equation}
+$$
+where $N^i=X^i/\rho$.
+
+Since the regular field is smooth, it can be expanded in a Taylor series around the worldline
+
+$$
+\begin{equation}
+A^{\text{R}} = \sum_{n\geq0}\rho^n P_{i_1\cdots i_{n}}(T)
+N^{i_{1}}\cdots N^{i_{n}}
+\end{equation}
+$$
+
+Note that the self-force $F_i$ only involve the first derivative, and tha the term of order $n=1$ in $A^{\text{S}}$ is even parity for a parity transformation $X^i\to-X^i$.
+
+
+The products of $N^i$'s can be re-written a sum of terms involving symmetric trace-free (STF) combinations
+
+$$
+\begin{equation}
+N^i N^j - \frac13\delta^{ij} = \hat{N}^{ij} 
+\end{equation}
+$$
+
+$$
+\begin{equation}
+N^i N^j N^k = \hat{N}^{ijk} + \frac15 (\delta^{ij}N^k + \delta^{ki}N^j+ \delta^{jk}N^i)
+\end{equation}
+$$
+
+$$
+\begin{equation}
+A^{\text{S}} =
+\frac e\rho + \sum_{n\geq0}\rho^n \sum_{L}^{3n+3}{}^{\prime} \hat{Q}_{L}(T)
+\hat{N}^{L}
+\end{equation}
+$$
+
+$$
+\begin{equation}
+A^{\text{R}} =
+\sum_{n\geq0}\rho^n \sum_{L}^{n}{}^{\prime} \hat{P}_{L}(T)
+\hat{N}^{L}
+\end{equation}
+$$
+
+Such a decomposition is in one-to-one correspondence with a spherical harmonic decomposition [Luc Blanchet, Thibault Damour (1986)].    
+$\rho=\sqrt{\delta_{ij}X^iX^j}:=R$.
+
+# Numercial Scheme
+
+## Puncture
+The order of the puncture is concerned with the rate of convergence of numerical algorithms.
+
+
+## Geodesic Self-Force
+<u>First</u>-order <u>Schwartzschild</u> <u>circular</u> <u>scalar</u> self-force
+[]
+
+## Self-consistent Self-Force
+[Phys.Rev.Lett. 108 (2012) 191102]
+$$
+\begin{align}
+    \Box\Phi^{\text{R}}
+    &=S_{\text{eff}}[x|z(\tau),u(\tau)]
+    \\
+    \frac{\mathrm{D}u^{a}}{\mathrm{d\tau}}
+    &= \frac{e}{m(\tau)}(g^{ab}+u^au^b)\nabla_a \Phi^{\text{R}}
+    \\
+    \frac{\mathrm{d}m}{\mathrm{d\tau}}
+    &= -eu^a\nabla_a \Phi^{\text{R}}
+\end{align}
+$$
+Note that the particle can radiate monopole waves and the radiated energy can come at the expense of the rest mass [Quinn(2000)].
+
+## Multiscale expansion
+
+However, the self-consistent approximation is not quite ideal for the EMRI problem.
+- It does not capitalize on the particular, adiabatic character of the orbital inspiral, which is only slowly evolving and hence very nearly triperiodic.
+- Furthermore, it is not designed to accurately incorporate a second type of slow change in the system: **the slow evolution of the large black hole** [?].
+
+The multiscale expansion a method of singular perturbation theory expresses the evolving worldline as a function of both “slow time” $(\tilde{t}=\epsilon t)$ and “fast time” variables.
+
+Such that the equation of motion and field equations into corresponding slow- and fast-time equations.
+
+- At fixed values of slow time, the fast-time equations have the same triperiodicity as a background geodesic, providing “snapshots” of the inspiral on the orbital time scale.
+- The slow-time equations then govern the smooth evolution from one snapshot to the next.
+
+### action-angle
+
+$$
+\begin{equation}
+    g_{\mu\nu} =
+    \bar{g}_{\mu\nu}+
+    \epsilon h_{\mu\nu}^{(1)}(\tilde{t},x^i,q^A)
+    +\epsilon^2 h_{\mu\nu}^{(2)}(\tilde{t},x^i,q^A)
+    +...
+\end{equation}
+$$
+The coeﬃcients in the expansion are required to be
+- bounded functions of $\tilde{t}$
+- periodic functions of $q^A$
+
+\begin{equation}
+h_{\mu\nu}^{(n)}=\sum_{k_A} h_{\mu\nu}^{(n,k_A)} (\tilde{t},x^i) 
+\mathrm{e}^{\mathrm{-i} k_A q^A}
+\end{equation}
+### Near Identity Transformation
+
+$$
+\begin{equation}
+    \dot{f}(P,q) \to \dot{\tilde{f}}(\tilde{P})
+    \text{ with }
+    \tilde{f}= f + \mathcal{O}(\epsilon)
+\end{equation}
+$$
+
+slow evolution of "geodesic" variables
+$$
+\begin{equation}
+    \dot{\tilde{P}}:=\frac{\mathrm{d} \tilde{P}}{\mathrm{d}t}\simeq \epsilon F^{(1)}(\tilde{P}) + \epsilon^2 F^{(2)} + ...
+\end{equation}
+$$
+fast evolution of phase variables
+
+\begin{equation}
+    \dot{\tilde{q}}\simeq f^{(0)}(\tilde{P}) + \epsilon f^{(1)} +  ...
+\end{equation}
+
+Thus,
+\begin{equation}
+    \tilde{q}(\tilde{t})= \frac{1}{\epsilon}[\tilde{q}^{(0)}(\tilde{t})+\epsilon \tilde{q}^{(1)}(\tilde{t}) + ...] 
+\end{equation}
+
+- “adiabatic approximation” $\tilde{q}^{(0)}$, requires only the time-averaged dissipative piece of the first-order force.
+- $n$-th “post-adiabatic approximation” $\tilde{q}^{(n)}$, requires the entire first-order force, along with the time-averaged dissipative piece of the second-order force.
+
+\begin{equation}
+    \tilde P(\tilde{t})= \tilde P^{(0)}(\tilde{t}) + \epsilon \tilde P^{(1)}(\tilde{t})
+    + ... 
+\end{equation}
+
+### Drawbacks
+- One limitation is that it breaks down on large distances, where length scales become comparable to the radiation-reaction time scale. [1510.05172]
+- A similar failure can also occur near the large black hole’s event horizon, which (in the context of wave propagation) plays a role similar to that of infinity.
+
+Overcoming these failures calls for the introduction of additional, complementary expansions near infinity and the horizon, which can be combined with the multiscale expansion by once again appealing to the method of matched asymptotic expansions.
+
+### Transition from inspiral to plunge
+Self-force framework for transition-to-plunge waveforms [2405.00170]
