@@ -361,7 +361,10 @@ The order of the puncture is concerned with the rate of convergence of numerical
 
 ## Geodesic Self-Force
 <u>First</u>-order <u>Schwartzschild</u> <u>circular</u> <u>scalar</u> self-force
-[]
+
+**Refs**
+> [2202.01794] $lm$
+> [2404.10083] $m$
 
 ## Self-consistent Self-Force
 [Phys.Rev.Lett. 108 (2012) 191102]
@@ -391,6 +394,9 @@ Such that the equation of motion and field equations into corresponding slow- an
 
 - At fixed values of slow time, the fast-time equations have the same triperiodicity as a background geodesic, providing “snapshots” of the inspiral on the orbital time scale.
 - The slow-time equations then govern the smooth evolution from one snapshot to the next.
+
+**Refs**
+> [2508.00087]
 
 ### action-angle
 
