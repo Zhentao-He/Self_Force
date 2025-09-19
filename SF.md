@@ -460,3 +460,23 @@ Overcoming these failures calls for the introduction of additional, complementar
 
 ### Transition from inspiral to plunge
 Self-force framework for transition-to-plunge waveforms [2405.00170]
+
+# Future work
+NS-SMBH IMR waveform from self-force theory
+- eccentric orbits
+- EM- & G-SF
+
+**two optional methods**
+1. self-consistent evolution
+    effective source/puncture: Diener et al., PRL (2012)
+    worldtube excision: Wittek et al., PRL(2025)
+2. geodesic self-force + multiscale expansion + transition to plunge
+    [1610.09319] eccentric geodesic scalar self-force in Kerr
+
+
+**challenges (for me)**
+1. Computing the puncture field and eﬀective
+source
+2. moving the worldtubes
+3. other numerical methods (e.g. discontinuous Galerkin method)
+4. coding
