@@ -171,8 +171,11 @@ $$
 q=\frac{\alpha_0}{\alpha_2}, \alpha_0=-[l(l+1)+\sigma(1+2s)+s^2(1+\sigma)]
 $$
 
-$\sigma=0$ is a irregular singular point.
+**Near $\mathcal{I}^+$**
 
+Note that $\sigma=0$ is an irregular singular point.
+It was shown that the regular solution near $\sigma=0$ satisfies the physical boundary condition [2202.03837].
+Thus, 
 $$
 p(\sigma)=\sigma^{-2}\sum_{n=0}^{\infty}a_n\sigma^n,q(\sigma)=\sigma^{-2}\sum_{n=0}^{\infty}b_n\sigma^n, \tilde{\phi}(\sigma)=\sigma^{\rho}\sum_{n=0}^{\infty}c_n\sigma^n
 $$
@@ -190,6 +193,51 @@ c_{k+1}= - \frac{c_kk(k-1)+\sum_{n=0}^{k}(a_{k+1-n}n+b_{k-n})c_n}
 {(k+1)a_0}
 $$
 
+**Near $\mathcal{H}^+$**
+
+Let's focus on the regular solution near $\sigma=1$.
+Note that $\sigma=1$ is a regular singular point. 
+
+$$
+p(\sigma)=\sum_{n=0}^{\infty}\tilde{a}_n (1-\sigma)^{n-1},
+q(\sigma)=\sum_{n=0}^{\infty}\tilde b_n(1-\sigma)^{n-1}, 
+\tilde{\phi}(\sigma)=(1-\sigma)^{\rho}\sum_{n=0}^{\infty}\tilde c_n(1-\sigma)^n
+$$
+
+The indicial equation for $\rho$ is
+
+$$
+c_0\rho(\rho-1-a_0)=0
+$$
+
+$$
+a_0 = \lim_{\sigma\to1}(1-\sigma)p(\sigma)=-2-s
+$$
+
+Similarly, it was shown that the regular solution near $\sigma=1$ satisfies the physical boundary condition [2202.03837].
+
+$$
+c_j = \dfrac {\sum_{k=1}^{j}[(j-k)a_k-b_{k-1}]c_{j-k}}
+{j(j-1-a_0)}
+$$
+
+**match**
+
+$\sigma\in[0,1]$
+
+$$
+\tilde{\phi}(\sigma)=\sum_{n=0}^{\infty}\tilde c_n(1-\sigma)^n
+=\sum_{k=0}^\infty
+\left[
+\sum_{j=k}^\infty
+(-1)^kC^{k}_{j}\tilde{c}_j
+\right]
+\sigma^k
+=\sum_{k=0}^\infty
+c_k
+\sigma^k
+$$
+
 ### Peeling theorem
 
 The radial Teukolsky equation in BL coordinates reads [Teukolsky, Astrophys.J. 185 (1973)]
@@ -200,7 +248,7 @@ $$
   \Delta ^{s+1} \frac{\mathrm{d}R}{\mathrm{d}r}
   \right)
   +
-   \frac{ V}{\Delta}
+   \frac{V}{\Delta}
   R=0
 $$
 
