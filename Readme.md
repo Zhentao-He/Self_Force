@@ -314,7 +314,7 @@ However, the coefficient of $1/r^2$ gives a diffirent result.
 ## Binary scalar particles
 
 $$
-r_1(t)=r_2(t)=\sqrt{r_p^2+d^2}\simeq r_p, \theta_1(t)=\theta_2(t)=\theta_p=\arctan\frac{d}{r_p},\varphi_1(t)=\omega_pt=\varphi_2(t)-\pi
+r_1(t)=r_2(t)= r_p, \theta_1(t)=\theta_2(t)=\theta_p=\arcsin\frac{d}{r_p},\varphi_1(t)=\omega_pt=\varphi_2(t)-\pi
 $$
 
 $$
@@ -324,7 +324,7 @@ g_{\mu\nu} \frac{\mathrm{d}x^{\mu}} {\mathrm{d}\tau} \frac{\mathrm{d}x^{\nu}} {\
 \rightarrow
 \left(
 \frac{\mathrm{d}\tau}{\mathrm{d}t_p} 
-\right)^2 =\frac{1}{f_p - (r_p\sin\theta_p\omega_p)^2}
+\right)^2 ={f_p - (r_p\sin\theta_p\omega_p)^2}
 $$
 
 $$
@@ -337,11 +337,11 @@ S_{\Phi}(t,r,\theta,\varphi) = -4\pi\rho=
 $$
 
 $$
-= \frac{-4\pi\sqrt{|f_p - (r_p\sin\theta_p\omega_p)^2|}}{r_p^2\sin\theta_p} \delta(r-r_p)\delta(\theta-\theta_p)[\delta(\varphi-\omega_pt)+\delta(\varphi-\omega_pt-\pi)]
+= -4\pi q\frac{\sqrt{|f_p - (r_p\sin\theta_p\omega_p)^2|}}{r_p^2\sin\theta_p} \delta(r-r_p)\delta(\theta-\theta_p)[\delta(\varphi-\omega_pt)+\delta(\varphi-\omega_pt-\pi)]
 $$
 
 $$
-S_{lm\omega} = \frac{-8\pi\sqrt{|f_p - (r_p\sin\theta_p\omega_p)^2|}}{r_p^2\sin\theta_p} \delta(r-r_p)Y_{lm}(\theta_p,0)\delta(\omega-m\omega_p), \text{not vanishes when } m=\text{even.}
+S_{lm\omega} = -8\pi q\frac{\sqrt{|f_p - (r_p\sin\theta_p\omega_p)^2|}}{r_p^2\sin\theta_p} \delta(r-r_p)Y_{lm}(\theta_p,0)\delta(\omega-m\omega_p), \text{not vanishes when } m=\text{even.}
 $$
 
 Just replacing $\kappa_{lm}= \frac{-8\pi\sqrt{|f_p - (r_p\sin\theta_p\omega_p)^2|}}{r_p^2\sin\theta_p} Y_{lm}(\theta_p,0)$, and repeating the above process, one can obtain the retrad field.
