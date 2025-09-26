@@ -1,18 +1,20 @@
 clear 
+close all
 % parameters
 M = 1; la = 4*M;
 q = 1; % scalar charge
-N = 120;  
+N = 128;  
 
-d = 0.1*M;
-OmegaP = 0.1/M;
-rp = 10*M;
+d = 1e-2*M;
+OmegaP = 1e-2/M;
+rp = 50*M;
 
-xp = 2*M/rp; fp = 1 - 2*M/rp; sinp = d/rp; kfac = -8*pi*q * sqrt(fp - (d*OmegaP)^2)/(rp^2*sinp);
+xp = 2*M/rp; fp = 1 - 2*M/rp; sinp = d/rp; kfac = -4*q * sqrt(fp - (d*OmegaP)^2)/(rp^2*sinp);
 
 [x,D,D2,jump_row] = multiDomain(xp,N);
 
-[phiR,phiI] =lm_solver(2,2,kfac,sinp,OmegaP,fp,xp,x,D,D2,jump_row,M,la,N);
+[phiR,phiI] = lm_solver(2,2,kfac,sinp,OmegaP,fp,xp,x,D,D2,jump_row,M,la,N);
+figure
 plot(x,phiR)
 
 m = 2;
@@ -95,7 +97,7 @@ function [phiR,phiI] = lm_solver(l,m,kfac,sinp,OmegaP,fp,xp,x,D,D2,jump_row,M,la
     Zp = xp/la*exp(s*Hp);
     klm_res = 2*M*fp*klm/Zp;
     jp = klm_res/(xp^2*(1-xp));
-    
+
     SR = zeros(2*N+1,1);
     SR(N+1) = real(jp);
     SI = zeros(2*N+1,1);

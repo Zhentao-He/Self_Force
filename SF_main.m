@@ -1,5 +1,6 @@
 % 2202.01794
 clear 
+close all
 % parameters
 M = 1; la = 4*M;
 q = 1; % scalar charge
@@ -17,6 +18,7 @@ phiI_scri = zeros(length(l_list),1);
 for ii = 1:length(l_list)
     l = l_list(ii);
     [phiR,phiI] = lm_solver(l,m,rp,OmegaP,fp,Ep,xp,x,D,D2,jump_row,M,la,q,N);
+    plot(x,phiR)
     phiR_scri(ii) = phiR(end);
     phiI_scri(ii) = phiI(end);
 end
@@ -34,6 +36,7 @@ for ii = 1:length(l_list)
     tmp = legendre(l,y);
     phi_theta = phi_theta + phiR_scri(ii) * C * tmp(m+1,:);
 end
+figure
 plot(y,phi_theta)
 %%
 function [OmegaP,fp,Ep,xp,x,D,D2,jump_row] = variableP(rp,N)

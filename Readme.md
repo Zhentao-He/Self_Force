@@ -49,7 +49,7 @@ S_{\Phi}(t,r,\theta,\varphi) = -4\pi\rho= -4\pi q\int
 $$
 
 $$
-=\frac{-4\pi q}{E_pr_p^2}\delta(r-r_p)\delta({\theta-\frac{\pi}{2}})
+=\frac{-4\pi qf_p}{E_pr_p^2}\delta(r-r_p)\delta({\theta-\frac{\pi}{2}})
 \delta(\varphi - \Omega t)
 $$
 
@@ -58,7 +58,7 @@ $$
 $$
 
 $$
-S_{lm\omega}(r) = \frac{-4\pi q}{E_pr_p^2}\delta(r-r_p) Y_{lm}(\frac{\pi}{2},0)\delta(\omega - m\Omega)
+S_{lm\omega}(r) = \frac{-2 qf_p}{E_pr_p^2}\delta(r-r_p) Y_{lm}(\frac{\pi}{2},0)\delta(\omega - m\Omega)
 $$
 
 $$
@@ -164,7 +164,7 @@ $$
 where 
 
 $$
-p(\sigma)=\frac{\alpha_1}{\alpha_2},\alpha_2=\sigma^2(1-\sigma),\alpha_1=2\sigma(2-3\sigma)+s(1-2\sigma^2)
+p(\sigma)=\frac{\alpha_1}{\alpha_2},\alpha_2=\sigma^2(1-\sigma),\alpha_1=\sigma(2-3\sigma)+s(1-2\sigma^2)
 $$
 
 $$
@@ -341,10 +341,10 @@ $$
 $$
 
 $$
-S_{lm\omega} = -8\pi q\frac{\sqrt{|f_p - (r_p\sin\theta_p\omega_p)^2|}}{r_p^2\sin\theta_p} \delta(r-r_p)Y_{lm}(\theta_p,0)\delta(\omega-m\omega_p), \text{not vanishes when } m=\text{even.}
+S_{lm\omega} = -4 q\frac{\sqrt{|f_p - (r_p\sin\theta_p\omega_p)^2|}}{r_p^2\sin\theta_p} \delta(r-r_p)Y_{lm}(\theta_p,0)\delta(\omega-m\omega_p), \text{not vanishes when } m=\text{even.}
 $$
 
-Just replacing $\kappa_{lm}= \frac{-8\pi\sqrt{|f_p - (r_p\sin\theta_p\omega_p)^2|}}{r_p^2\sin\theta_p} Y_{lm}(\theta_p,0)$, and repeating the above process, one can obtain the retrad field.
+Just replacing $\kappa_{lm}= -4 q\dfrac{\sqrt{|f_p - (r_p\sin\theta_p\omega_p)^2|}}{r_p^2\sin\theta_p} Y_{lm}(\theta_p,0)$, and repeating the above process, one can obtain the retrad field.
 
 ## Analytic Mesh-Refinement(AnMR)
 
