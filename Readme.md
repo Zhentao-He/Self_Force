@@ -164,11 +164,29 @@ $$
 where 
 
 $$
-p(\sigma)=\frac{\alpha_1}{\alpha_2},\alpha_2=\sigma^2(1-\sigma),\alpha_1=\sigma(2-3\sigma)+s(1-2\sigma^2)
+p(\sigma;s)=\frac{\alpha_1(\sigma;s)}{\alpha_2(\sigma)},
 $$
 
 $$
-q=\frac{\alpha_0}{\alpha_2}, \alpha_0=-[l(l+1)+\sigma(1+2s)+s^2(1+\sigma)]
+q=\frac{\alpha_0(\sigma;s,l)}{\alpha_2}, 
+$$
+
+$$
+\begin{equation}
+  \alpha_2=\sigma^2(1-\sigma),
+\end{equation}
+$$
+
+$$
+\begin{equation}
+  \alpha_1=\sigma(2-3\sigma)+s(1-2\sigma^2),
+\end{equation}
+$$
+
+$$
+\begin{equation}
+  \alpha_0=-[l(l+1)+\sigma(1+2s)+s^2(1+\sigma)]
+\end{equation}
 $$
 
 **Near $\mathcal{I}^+$**
@@ -189,8 +207,15 @@ $$
 where $a_0,b_0,c_0\neq0$ is by definition. Thus $\rho=0$. The recurrence relation for $c_k$ is
 
 $$
-c_{k+1}= - \frac{c_kk(k-1)+\sum_{n=0}^{k}(a_{k+1-n}n+b_{k-n})c_n}
-{(k+1)a_0}
+c_{k+1}= - \frac{1}{(k+1)a_0}
+\left[
+  c_k[k(k-1)+b_0]
++\sum_{j=0}^{k-1}(a_{k-j}(j+1)c_{j+1} +b_{k-j}c_j)
+\right]
+$$
+
+$$
+c_1=-\frac{b_0}{a_0}c_0
 $$
 
 **Near $\mathcal{H}^+$**
